@@ -1,0 +1,200 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url(/gif-img/back3.gif);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+    /* Сохраняем для нормального отображения фона */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    /* Центрирование по горизонтали */
+    align-items: center;
+    /* Центрирование по вертикали */
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    /* Дополнительное центрирование */
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    min-height: 70vh;
+    border-radius: 20px;
+    border: 3px solid;
+    backdrop-filter: blur(15px);
+    padding: 30px 20px;
+    text-align: center;
+    animation: brightnessPulse 2s ease-in-out infinite;
+}
+
+/* Остальной CSS без изменений */
+@keyframes brightnessPulse {
+
+    0%,
+    100% {
+        border-color: rgb(255, 94, 0);
+        box-shadow: 0 0 10px rgba(255, 94, 0, 0.726);
+    }
+
+    50% {
+        border-color: rgba(255, 94, 0, 0.521);
+        box-shadow: 0 0 5px rgba(255, 94, 0, 0.295);
+    }
+}
+
+.title-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.box-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.photo {
+    border-radius: 50%;
+    border: 2px solid;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    animation: pulsewhite 2s ease-in-out infinite;
+    margin-bottom: 30px;
+}
+
+@keyframes pulsewhite {
+
+    0%,
+    100% {
+        border-color: rgb(255, 255, 255);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.61);
+    }
+
+    50% {
+        border-color: rgba(255, 255, 255, 0.466);
+        box-shadow: 0 0 7px rgba(255, 255, 255, 0.288);
+    }
+}
+
+.buttons-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 50px;
+    width: 100%;
+    max-width: 150px;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid #707070;
+    overflow: hidden;
+    border-radius: 30px;
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+}
+
+.button2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 50px;
+    width: 100%;
+    max-width: 250px;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid #707070;
+    overflow: hidden;
+    border-radius: 30px;
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-txt {
+    z-index: 1;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+.type1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+    background-color: #ffffff;
+    border-radius: 30px;
+    visibility: hidden;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+}
+
+.button:hover,
+.button2:hover {
+    box-shadow: 1px 1px 200px #252525;
+    color: #000000;
+    border: none;
+}
+
+.type1:hover::after {
+    visibility: visible;
+    transform: scale(100) translateX(2px);
+}
+
+/* Адаптивность без медиа-запросов */
+@media (max-width: 480px) {
+    .box {
+        padding: 20px 15px;
+        min-height: 60vh;
+    }
+
+    .box-title {
+        font-size: 24px;
+    }
+
+    .photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .button {
+        height: 45px;
+    }
+
+    .btn-txt {
+        font-size: 14px;
+    }
+}
