@@ -9,11 +9,16 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-image: url(/gif-img/back3.gif);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     color: white;
-    padding: 20px;
+    flex-direction: column;
     min-height: 100vh;
 
+}
+.fjalla-one-regular {
+  font-family: "Fjalla One";
+  font-weight: 400;
+  font-style: normal;
 }
 
 main {
@@ -23,6 +28,7 @@ main {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
+    flex: 1;
 }
 
 .style-title{
@@ -31,16 +37,17 @@ main {
 }
 .box {
     display: flex;
+    background-color: #00000077;
     flex-direction: column;
     align-items: center;
     width: 90%;
     min-height: 70vh;
     border-radius: 20px;
     border: 3px solid;
-    backdrop-filter: blur(15px);
     padding: 30px 20px;
     text-align: center;
     animation: brightnessPulse 2s ease-in-out infinite;
+    z-index: 1;
 }
 
 @keyframes brightnessPulse {
@@ -64,7 +71,8 @@ main {
     width: 100%;
 }
 
-.box-title {
+.title {
+    letter-spacing: 5px;
     font-size: 28px;
     margin-bottom: 25px;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -76,6 +84,7 @@ main {
     width: 150px;
     height: 150px;
     object-fit: cover;
+
     animation: pulsewhite 2s ease-in-out infinite;
     margin-bottom: 30px;
 }
@@ -173,7 +182,26 @@ main {
     transform: scale(100) translateX(2px);
 }
 
-@media (max-width: 480px) {
+footer{
+    background-color: #ffffff0e;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 200px;
+    min-height: 7vh;
+    padding-right: 100px;
+}
+
+.footer-links{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+.footer-links:hover{
+    color: #acacac;
+}
+@media (max-width: 750px) {
     .box {
         padding: 20px 15px;
         min-height: 60vh;
@@ -195,5 +223,12 @@ main {
 
     .btn-txt {
         font-size: 14px;
+    }
+    
+    footer{
+        background-color: #ffffff21;
+        justify-content: center;
+        gap: 60px;
+        padding-right: 0;
     }
 }
